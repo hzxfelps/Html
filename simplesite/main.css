@@ -1,0 +1,219 @@
+body {
+    background-color: #0f0b0bec;
+    color: #e6e6e6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+background-color: #201616;
+padding: 20px;
+text-align: center;
+font-family: 'UnifrakturCook', cursive;
+font-size: 4em;
+color: #b3e5fc;
+}
+section {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+h2 {
+  color: #81d4fa;
+}
+.timeline {
+  border-left: 2px solid #81d4fa;
+  padding-left: 20px;
+  margin-left: 10px;
+}
+.event {
+  margin-bottom: 30px;
+}
+.event img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.characters, .locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background-color: #1f1f1f;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(129, 212, 250, 0.2);
+}
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.diagram {
+  width: 100%;
+  border-radius: 10px;
+}
+table {
+  border-collapse: collapse; 
+  width: 100%; 
+}
+th, td {
+  border: 1px solid #ddd; 
+  padding: 8px; 
+}
+th, td {
+      border-radius: 50%; 
+      width: 1px;
+      height: 8px;
+  }
+  iframe{
+    width: 1000px;
+    height: 500px;
+  }
+  /*darkmodezin delicia*/
+body.darkmode {
+    background-color: #0f0b0bec;
+    color: #e6e6e6;
+  }
+  /*lightmode do site p caso algum drogado queira ativar*/
+  body.lightmode {
+    background-color: #f4f4f4;
+    color: #1c1c1c;
+  }
+  
+  body.lightmode header {
+    background-color: #b4b2b23f;
+    color: #1c304ed5;
+  }
+  
+  body.lightmode h2 {
+    color: #1c304ed5;
+  }
+  
+  body.lightmode .card {
+    background-color: #b4b2b277;
+    color: #1c1c1c;
+    box-shadow: 0 0 10px rgba(21, 101, 192, 0.2);
+  }
+  
+  body.lightmode .timeline {
+    border-left: 2px solid #1565c0;
+  }
+  
+  body.lightmode table,
+  body.lightmode th,
+  body.lightmode td {
+    border: 1px solid #bbb;
+    color: #1c1c1c;
+  }
+  
+  body.lightmode iframe {
+    filter: brightness(1.1);
+  }
+  #toggle-theme {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+  #icon-dark,
+#icon-light {
+  display: none;
+}
+
+body.darkmode #icon-dark {
+  display: inline;
+}
+
+body.lightmode #icon-light {
+  display: inline;
+}
+/*slide........................................................................................*/
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(129, 212, 250, 0.2);
+  }
+  .mySlides {
+    display: none;
+    text-align: center;
+  }
+  .mySlides img {
+    max-height: 450px;
+    object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #b3e5fc;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(32, 22, 22, 0.5);
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(32, 22, 22, 0.8);
+  }
+  .text {
+    color: #b3e5fc;
+    font-size: 1.2em;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(32, 22, 22, 0.7);
+  }
+  .numbertext {
+    color: #b3e5fc;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(32, 22, 22, 0.7);
+    border-radius: 0 0 10px 0;
+  }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #333;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #81d4fa;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
