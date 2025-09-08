@@ -92,16 +92,14 @@ img {
     box-shadow: 0 0 15px #900;
 }
 
-iframe {
+iframe, video {
     display: block;
     margin: 20px auto;
     border: 3px solid #900;
     border-radius: 10px;
 }
-em {
-    color: blueviolet;
-}
-.form-group {
+
+.form-groups {
     background: rgb(83, 82, 82);
     margin: 10px 0;
     padding: 10px;
@@ -114,8 +112,7 @@ em {
     max-width: 800px;
 }
 
-input,
-textarea {
+input, textarea {
     border-radius: 8px;
     padding: 10px;
     border: 1px solid #444;
@@ -126,16 +123,41 @@ textarea {
     box-sizing: border-box;
     resize: vertical;
 }
+
 .botaoenviar {
     border-radius: 8px;
-    color: rgb(178, 81, 235) ;
+    color: rgb(178, 81, 235);
     margin: auto;
     background-color: rgb(22, 13, 9);
-    width: 5%;
-    height: 10%;
+    width: 10%;
+    height: 50px;
 }
-.botaoenviar:hover{
+
+.botaoenviar:hover {
     background-color: rgba(202, 36, 36, 0.76);
     color: rgb(22, 13, 9);
     font-weight: bold;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 24px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button i {
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #ff3333;
+    transform: scale(1.05);
 }
