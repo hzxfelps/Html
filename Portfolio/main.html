@@ -124,7 +124,7 @@
     <section id="contato" class="secao">
         <h2>Contato</h2>
         <p>Envie-me uma mensagem</p>
-        <div class="form-groups">
+        <form id="formulario" class="form-groups">
             <label for="nome">Nome:</label>
             <input type="text" name="nome_usuario" id="nome" required>
             <label for="email">E-mail:</label>
@@ -132,12 +132,16 @@
             <label for="mensagem">Mensagem:</label>
             <textarea name="mensagemdo_usuario" id="mensagem" required></textarea>
             <button class="botaoenviar" type="submit">Enviar</button>
-        </div>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 2025 Felipe</p>
     </footer>
+    <!--Porra de formulario funciona-->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="app.js"></script>
+
 </body>
 
 </html>
