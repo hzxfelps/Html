@@ -190,7 +190,7 @@ li a:hover {
 /**sai linha roxa do capeta**/
 a.botao-icon {
     display: inline-flex;
-    align-items: center;
+    align-items: center;    
     justify-content: center;
     padding: 20px;
     border-radius: 12px;
@@ -207,4 +207,10 @@ a.botao-icon:hover {
     transform: scale(1.1);
     background-color: #900;
     color: white;
+}
+.cssicon, .javaicon, .htmlicon {
+    margin: 5px;
+    max-width: 150px;
+    max-height: 150px;
+    background-color: #fff;
 }
