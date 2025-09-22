@@ -1,42 +1,41 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #d0cece;
+    background-color: #111; /* fundo preto */
     color: #f0f0f0;
 }
+
 header {
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    color: rgb(10, 10, 10); 
+    background: url("ayo.jpg") center/cover no-repeat;
     padding: 30px 0;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
-} 
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
 header h1 {
     margin: 0;
-    text-align: center;
-    color: #000000;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #b347ff; /* roxo */
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 0;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: #000000;
+    color: #f0f0f0;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #972983;
+    color: #b347ff;
 }
 
 .container {
@@ -45,28 +44,26 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-/* Arrumar as secao (secção, seccão, sessão????) */
-.seccao, .secao, .section {
+.secao {
     margin-bottom: 40px;
     padding: 20px;
-    border-left: 5px solid rgb(106, 101, 101);
-    background-color: #c3bbbb;
+    border-left: 5px solid #b347ff;
+    background-color: #1a1a1a;
     border-radius: 10px;
 }
 
 h2, h3 {
-    color: #58104b;
+    color: #b347ff;
 }
 
 strong {
-    color: #58104b; 
+    color: #b347ff; 
 }
 
 ul, dl {
     margin-left: 20px;
 }
 
-/* tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -75,13 +72,13 @@ table {
 }
 
 th, td {
-    border: 1px solid #900;
+    border: 1px solid #b347ff;
     padding: 10px;
     text-align: center;
 }
 
 th {
-    background-color: #900;
+    background-color: #b347ff;
     color: #fff;
 }
 
@@ -89,41 +86,32 @@ tr:nth-child(even) {
     background-color: #181818;
 }
 
-/* arrumar a imagem que fica grande pra caraio */
-img {
+img, iframe, video {
     display: block;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgb(59, 49, 49);
+    box-shadow: 0 0 15px rgba(179, 71, 255, 0.4);
+    max-width: 100%;
+    height: auto;
+    border: none;
 }
 
-/* video grande do caralho */
-iframe, video {
-    display: block;
-    margin: 20px auto;
-    border: 3px solid #900;
-    border-radius: 10px;
-}
-
-/* formulariozinho */
 .form-groups {
-    background: #a6a2a2;
+    background: #1a1a1a;
     margin: 10px 0;
-    padding: 10px;
-    border: 4px solid rgb(93, 85, 85);
+    padding: 15px;
+    border: 2px solid #b347ff;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    width: 100%;
-    max-width: 1800px;
+    gap: 10px;
 }
 
 input, textarea {
     border-radius: 8px;
     padding: 10px;
-    border: 2px solid #8f8484;
-    background-color: #928b8bbc;
+    border: 2px solid #444;
+    background-color: #2b2b2b;
     color: #f0f0f0;
     font-size: 16px;
     width: 100%;
@@ -131,29 +119,29 @@ input, textarea {
     resize: vertical;
 }
 
-/* botao formulario que a letra nao fica do tamanho que eu quero */
 .botaoenviar {
     border-radius: 8px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(86, 81, 79);
-    width: 8%;
-    height: 35px;
+    color: #fff;
+    background-color: #b347ff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    align-self: flex-start;
 }
 
 .botaoenviar:hover {
-    background-color: rgba(86, 48, 148, 0.76);
-    color: rgb(22, 13, 9);
+    background-color: #922dd9;
     font-weight: bold;
 }
 
-/* botaozinho */
 button {
     background-color: #333;
     color: white;
     border: none;
     padding: 12px;
-    font-size: 12px;
-    border-radius: 5px;
+    font-size: 14px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,29 +150,18 @@ button {
 }
 
 button i {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 button:hover {
-    background-color: #ff3333;
+    background-color: #b347ff;
     transform: scale(1.05);
 }
 
-/* roxo filho da puta */
-li a {
-    text-decoration: none;
-    color: inherit;
-}
-
-li a:visited {
-    color: inherit;
-    text-decoration: none;
-}
-
-li a:focus {
-    outline: none;
-}
-
-li a:hover {
-    text-decoration: none;
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #000;
+    color: #b347ff;
 }
