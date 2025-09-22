@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <title>Main</title>
+    <title>DunkZone</title>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1><i class="fa-solid fa-basketball"></i>  Dunkzone</h1>
+            <h1><i class="fa-solid fa-basketball"></i> DunkZone</h1>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -24,9 +24,10 @@
             </nav>
         </div>
     </header>
-        <div class="container">
+
+    <div class="container">
         <main>
-            <section id="sobre" class="seccao">
+            <section id="sobre" class="secao">
                 <h2>Sobre mim</h2>
                 <p>Meu nome é Felipe, sou aluno SENAI do curso de Análise e Desenvolvimento de Sistemas e busco
                     fortalecer minhas habilidades em programação através de estágios.</p>
@@ -37,29 +38,29 @@
             <section class="secao">
                 <h2>Meus Hobbies</h2>
                 <ul>
-                    <li>Esportes</li>
-                    <ul>
-                        <li>Ciclismo</li>
-                        <li>Futebol</li>
-                    </ul>
-                    <li>Jogos: Clash Royale, Jogos de celular, F1</li>
+                    <li>Esportes
+                        <ul>
+                            <li>Ciclismo</li>
+                            <li>Futebol</li>
+                        </ul>
+                    </li>
+                    <li>Jogos: Clash Royale, F1, jogos de celular</li>
                     <li>Pedalar</li>
-                    <li>Vinicius</li>
                 </ul>
 
                 <h3>Redes de programação</h3>
                 <ul>
-                    <li>Repositórios GITHUB<br>
+                    <li>GitHub<br>
                         <a href="https://github.com/hzxfelps" target="_blank" class="botao-icon">
                             <i class="fab fa-github"></i>
                         </a>
                     </li>
-                    <li>JAVA<br>
+                    <li>Java<br>
                         <a href="https://github.com/hzxfelps/Java.git" target="_blank" class="botao-icon">
                             <i class="fab fa-java"></i>
                         </a>
                     </li>
-                    <li>POO (Programação orientada a objetos)<br>
+                    <li>POO<br>
                         <a href="https://github.com/hzxfelps/OOP-Object-Oriented-Programming-.git" target="_blank"
                             class="botao-icon">
                             <i class="fas fa-cube"></i>
@@ -76,51 +77,49 @@
                         </a>
                     </li>
                 </ul>
-
-
             </section>
 
-            <section id="habilidades" class="section">
-                <h1>Tabela de habilidades</h1>
+            <section id="habilidades" class="secao">
+                <h2>Tabela de habilidades</h2>
                 <table>
                     <thead>
                         <tr>
                             <th>Tecnologia</th>
-                            <th>Nível de Conhecimento</th>
+                            <th>Nível</th>
                             <th>Anos de Programação</th>
                         </tr>
                     </thead>
-                    <tbody> <!--img class="javaicon" src="javaicon.png" alt="javaicon"-->
+                    <tbody>
                         <tr>
-                            <td><img class="htmlicon" src="html5.png" alt="htmlicon"></td>
-                            <td>Cracudo pro master</td>
+                            <td><img src="html5.png" alt="HTML5"></td>
+                            <td>Avançado</td>
                             <td>2013</td>
                         </tr>
                         <tr>
-                            <td><img class="javaicon" src="javaicon.png" alt="javaicon"></td>
+                            <td><img src="javaicon.png" alt="Java"></td>
                             <td>Intermediário</td>
                             <td>2025</td>
                         </tr>
                         <tr>
-                            <td><img class=></td>
-                            <td>Aspas do css 🔥</td>
+                            <td>CSS</td>
+                            <td>Bom domínio</td>
                             <td>2017</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
 
-            <section id="midia" class="section">
+            <section id="midia" class="secao">
                 <h2>Mídias</h2>
                 <h3>Meu vídeo vida de programação</h3>
-                <video width="100%" controls>
+                <video controls>
                     <source src="Hollow Knight_ Silksong - Release Trailer.mp4" title="Best game of 2025 !!">
                 </video>
             </section>
         </main>
     </div>
 
-    <section id="contato" class="secao">
+    <section id="feedback" class="secao">
         <h2>Feedback</h2>
         <p>Envie-nos seu feedback!</p>
         <form id="formulario" class="form-groups">
@@ -129,18 +128,16 @@
             <label for="email">E-mail:</label>
             <input type="email" name="email_usuario" id="email" required>
             <label for="mensagem">Mensagem:</label>
-            <textarea name="mensagemdo_usuario" id="mensagem" required></textarea>
+            <textarea name="mensagem_usuario" id="mensagem" required></textarea>
             <button class="botaoenviar" type="submit">Enviar</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Felipe</p>
+        <p>&copy; 2025 Felipe - DunkZone</p>
     </footer>
-    <!--Porra de formulario funciona-->
+
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="app.js"></script>
-
 </body>
-
 </html>
