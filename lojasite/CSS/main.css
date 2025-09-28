@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111; /* fundo preto */
+    color: #f0f0f0;
+}
+
+header {
+    background: url("ayo.jpg") center/cover no-repeat;
+    padding: 30px 0;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #b347ff; /* roxo */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #b347ff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.secao {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 5px solid #b347ff;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+h2, h3 {
+    color: #b347ff;
+}
+
+strong {
+    color: #b347ff; 
+}
+
+ul, dl {
+    margin-left: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+th, td {
+    border: 1px solid #b347ff;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #b347ff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #181818;
+}
+
+img, iframe, video {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(179, 71, 255, 0.4);
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+.form-groups {
+    background: #1a1a1a;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid #b347ff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #444;
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.botaoenviar {
+    border-radius: 8px;
+    color: #fff;
+    background-color: #b347ff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    align-self: flex-start;
+}
+
+.botaoenviar:hover {
+    background-color: #922dd9;
+    font-weight: bold;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button:hover {
+    background-color: #b347ff;
+    transform: scale(1.05); 
+    /* aqui o botão cresce 5% quando tu cola o mouse em cima.
+       É o truque pra parecer que tá vivo, chamando o click. */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #000;
+    color: #b347ff;
+}
+
+.hero {
+    background: url("banner-tenis.jpg") center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 0 25px rgba(179, 71, 255, 0.4);
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(179, 71, 255, 0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    /* essa fita do "transition" deixa a troca dos slides suave.
+       Sem isso o bagulho ia ficar duro, pulando de uma vez só. */
+    width: 100%; 
+}
+
+.carousel-track img {
+    flex: 0 0 100%; 
+    object-fit: cover; 
+    /* o "object-fit" garante que a imagem não fica zoada ou esticada.
+       Ele corta só o excesso, mantendo o estilo firmeza. */
+    border-radius: 15px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    /* esse truque aqui é maroto: 
+       joga o botão pra cima metade do tamanho dele.
+       Resultado: o botão fica cravado bem no meio do carrossel. */
+    background: rgba(179, 71, 255, 0.7);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+.carousel-btn:hover {
+    background: rgba(146, 45, 217, 0.9);
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.produtos {
+    display: grid; /*Deixa as fita em grade p/ poder separar*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(179, 71, 255, 0.3);
+    transition: transform 0.3s;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background: #b347ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+.card button:hover {
+    background: #922dd9;
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    /* esse bagulho aqui faz o card ficar maior qnd passa o mouse em cima*/
+}
+/* Esconde o submenu por padrão */
+nav ul .submenu {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    margin-top: 15px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(179, 71, 255, 0.3);
+    z-index: 10;
+}
+nav ul li.dropdown:hover .submenu {
+    display: block;
+}
+nav ul .submenu li {
+    padding: 5px 20px;
+    white-space: nowrap;
+}
+
+nav ul .submenu li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+}
+
+nav ul .submenu li a:hover {
+    color: #b347ff;
+}
+
+nav ul li.dropdown {
+    position: relative;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>DunkZone</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fa-solid fa-basketball"></i> DunkZone</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+
+                    <li class="dropdown">
+                        <a href="categorias.html">Categorias <i class="fa fa-caret-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="categoria-nike.html">Nike</a></li>
+                            <li><a href="categoria-adidas.html">Adidas</a></li>
+                            <li><a href="categoria-jordan.html">Jordan</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#midia">Mídia</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="hero">
+                <h2>🔥 Nova coleção de Tênis 2025 já disponível!</h2>
+            </section>
+
+            <!-- CARROSSEL FILHO DA PUTA QUE NAO FUNCIONA -->
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="tenis1.jpg" alt="Tênis 1">
+                    <img src="tenis2.jpg" alt="Tênis 2">
+                    <img src="tenis3.jpg" alt="Tênis 3">
+                </div>
+                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+
+            <!-- GRID DE PRODUTOS -->
+            <section class="secao">
+                <h2>Mais Vendidos</h2>
+                <div class="produtos">
+                    <div class="card">
+                        <img src="tenis4.jpg" alt="Tênis Nike Air">
+                        <h3>Nike Air Zoom</h3>
+                        <p>R$ 499,90</p>
+                        <button>Comprar</button>
+                    </div>
+                    <div class="card">
+                        <img src="tenis5.jpg" alt="Tênis Adidas">
+                        <h3>Adidas Ultraboost</h3>
+                        <p>R$ 599,90</p>
+                        <button>Comprar</button>
+                    </div>
+                    <div class="card">
+                        <img src="tenis6.jpg" alt="Tênis Jordan">
+                        <h3>Air Jordan Retro</h3>
+                        <p>R$ 799,90</p>
+                        <button>Comprar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        </main>
+    </div>
+
+    <section id="feedback" class="secao">
+        <h2>Feedback</h2>
+        <p>Envie-nos seu feedback!</p>
+        <form id="formulario" class="form-groups">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome_usuario" id="nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email_usuario" id="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem_usuario" id="mensagem" required></textarea>
+            <button class="botaoenviar" type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Felipe - DunkZone</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
