@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Convertor</title>
+</head>
+
+<body>
+    <div class="caixa">
+        <h1>Convertor básico de temperaturas</h1>
+        <form id="formulario">
+            <select name="tipodeconversao" id="tipodeconversao">
+                <option value="" disabled selected>Selecione a conversão</option>
+                <option id="CpF" value="somar">Celsius para Fahrenheit</option>
+                <option id="CpK" value="subtrair">Celsius para Kelvin</option>
+                <option id="FpC" value="multiplicar">Fahrenheit para Celsius</option>
+                <option id="FpK" value="dividir">Fahrenheit para Kelvin</option>
+                <option id="KpC" value="dividir">Kelvin para Celsius</option>
+                <option id="KpF" value="dividir">Kelvin para Fahrenheit</option>
+            </select>
+            <button type="submit">Calcular</button>
+        </form>
+    </div>
+    <div class="erro" id="erro"></div>
+    <div class="resultado "id="resultado"></div>
+</body>
+<script src="JS/app.js"></script>
+</html>
