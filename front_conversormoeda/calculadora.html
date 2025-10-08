@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Conversor</title>
+</head>
+
+<body>
+    <div class="caixa">
+        <h1>Conversor básico de moedas</h1>
+        <form id="formulario">
+            <input type="number" id="valor" placeholder="valor" required>
+            <select name="de" id="de">
+                <option value="" disabled selected>Selecione a moeda a ser convertida</option>
+                <option id="Real">Real</option>
+                <option id="Dólar">Dólar</option>
+                <option id="Euro">Euro</option>
+            </select>
+            <select name="para" id="para">
+                <option value="" disabled selected>Selecione a moeda a ser convertida</option>
+                <option id="Real">Real</option>
+                <option id="Dólar">Dólar</option>
+                <option id="Euro">Euro</option>
+            </select>
+            <button type="submit">Converter</button>
+        </form>
+    </div>
+    <div class="erro" id="erro"></div>
+    <div class="resultado" id="resultado"></div>
+</body>
+<script src="JS/app.js"></script>
+
+</html>
