@@ -1,22 +1,19 @@
-document.getElementById("formulario").addEventListener("submit", async function (e) {
+document.getElementById('formulario').addEventListener('submit', async function (e) {
     e.preventDefault();
-
-    const tipodeconversao = document.getElementById("conversao").value;
-
-    let resultado = 0;
-    let erro = 0;
+    const temp = parseFloat(document.getElementById('temp').value);
+    const de = document.getElementById('de').value;
+    const para = document.getElementById('para').value;
 
     try {
-        const response = await fetch("http://localhost:8080/calcular", {
+        const response = await fetch('http://localhost:8080/conversor', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json' 
-                //application/x-www-form-urlencoded
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: new URLSearchParams({
-                num1,
-                num2,
-                operacao
+                temp: temp,
+                de: de,
+                para: para
             })
         });
 
@@ -29,13 +26,17 @@ document.getElementById("formulario").addEventListener("submit", async function 
         if (data.erro) {
             document.getElementById('erro').textContent = data.erro;
         } else {
-            document.getElementById('resultado').textContent = data.resultado;
+            document.getElementById('resultado').textContent = 'Resultado: ' + data.resultado;
         }
 
     } catch (err) {
         document.getElementById('erro').textContent = 'Erro: ' + err.message;
     }
+
+
+    
 });
+
 /*
 switch (operacao) {
     case "somar":
@@ -65,4 +66,5 @@ if (erro == 0) {
     document.getElementById("erro").textContent = erro;
 }
 })
+
 */
