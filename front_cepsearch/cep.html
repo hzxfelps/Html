@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/cep.css" rel="stylesheet" />
+    <title>CEPlocation</title>
+</head>
+
+<body>
+    <form method="get" action=".">
+        <label> Cep:
+            <input type="text" name="cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);">
+        </label>
+        <label> Rua:
+            <input name="rua" id="rua" type="text" size="60" />
+        </label>
+        <label> Bairro:
+            <input name="bairro" id="bairro" type="text" size="40" />
+        </label>
+        <label> Cidade:
+            <input name="cidade" id="cidade" type="text" size="60" />
+        </label>
+        <label> Estado:
+            <input name="estado" id="estado" type="text" size="60" />
+        </label>
+        <label> UF:
+            <input name="uf" id="uf" type="text" size="60" />
+        </label>
+        <label> Região:
+            <input name="regiao" id="regiao" type="text" size="40" />
+        </label>
+        <label> IBGE:
+            <input name="ibge" id="ibge" type="text" size="60" />
+        </label>
+        <label> DDD:
+            <input name="ddd" id="ddd" type="text" size="60" />
+        </label>
+    </form>
+    <script src="JS/cep.js"></script>
+</body>
+
+</html>
