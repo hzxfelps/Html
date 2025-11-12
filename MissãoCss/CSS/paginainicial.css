@@ -1,0 +1,103 @@
+body {
+    background-image:
+        radial-gradient(300px at 0% 0%, rgb(48, 150, 218) 10%, transparent 100%),
+        radial-gradient(300px at 100% 100%, rgb(48, 150, 218) 10%, black 100%);
+    background-attachment: fixed;
+}
+
+
+#senai {
+    font-weight: bolder;
+    color: white;
+}
+
+
+
+
+
+header {
+    margin: 5px;
+}
+
+.mainTitle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 20vh;
+}
+
+.senaiH2 {
+
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    text-align-last: justify;
+    width: 100%;
+}
+
+.names {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+}
+
+
+.secondaryTitle {
+    justify-content: center;
+    align-items: center;
+}
+
+.cssTitle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.blackCSS {
+    color: black;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 1px;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+}
+
+  button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: white;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+.buttonsRight {
+    position: fixed;
+    right: 30px;
+    /* Distance from right edge */
+    top: 50%;
+    /* Middle of viewport */
+    transform: translateY(-50%);
+    /* Centers vertically */
+    z-index: 1000;
+    /* Ensures it stays above other content */
+}
+
+.superbox {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 5%;
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
