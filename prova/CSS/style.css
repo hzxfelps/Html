@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+}
+.espaco, .header{
+    background-color: burlywood;
+}
+.superbox {
+    background-color: rgb(197, 197, 180);
+}
+ul, li {
+    list-style: none;
+    display: flex;
+}
+.tituloheader {
+    margin-right: 130vh;
+}
+.hrefs {
+    display: flex;
+    padding: 1vh;
+    gap: 4vh;
+    font-size: 2vh;
+    color: black;
+    margin-top: 2vh;
+}
+.hrefs :hover {
+    color: white;
+    transition: 300ms;
+}
+.card {
+    background-color: white;
+    max-width: 100vh;
+    box-shadow: 10%;
+    border-radius: 2%;
+    text-align: center;
+    box-shadow: 1px 1px 4px;
+}
+.caixaforacard {
+    margin: 10vh;
+    margin-left: 50vh;
+}
+footer {
+    display: flex;
+    background-color: burlywood;
+    padding: 3vh;
+}
+.caixacategorias {
+    background-color: rgba(136, 81, 81, 0.781);
+    padding: 10vh;
+    margin: 10vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.titulocategorias {
+    gap: 10vh;
+    margin: 5vh;
+    margin-top: 0;
+    width: 60vh;
+    margin-left: 50vh;
+    color: whitesmoke;
+}
+/*.cima, .baixo {
+    padding-bottom: 10vh;
+    display: flex;
+    gap: 100vh;
+}
+    */
+.minicaixas {
+    width: 60vh;  
+    color: whitesmoke;
+    display: flex;
+    gap: 35vh;
+}
+button {
+    background-color: rgba(138, 112, 112, 0.781);
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    margin-left: 90%;
+}
+.oiamigo a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.minicaixas img {
+    max-width: 30vh;
+    max-height: 30vh;
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+.tituloheader img {
+    max-width: 20vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+.espaco {
+    margin-left: 90vh;
+}
+.cardmaior {
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+    margin: 20vh;
+    display: flex;
+    max-width: 120vh;
+    margin-right: 60vh;
+    margin-left: 50vh ;
+}
+.varaesquerda img {
+    max-width: 40vh;
+    margin: 3vh;
+    margin-left: 4vh;
+    margin-bottom: 0;
+}
+.informacoes-esquerda h1 {
+    margin-bottom: 3vh;
+    font-size: 5vh;
+}
+.informacoes-esquerda h2 {
+    margin-top: 22vh;
+    font-size: 8vh;
+}
+.coluninha {
+    background-color: black;
+    width: 0.5vh;
+    margin-right: 1vh;
+    margin-left: 0;
+}
+.caixa-equipamentos img {
+    max-width: 25vh;
+    margin-right: 4vh;
+}
+.caixa-equipamentos a {
+    text-decoration: none;
+    color: black;
+}
+.caixa-equipamentos a :hover {
+    color: whitesmoke;
+}
+.caixa-equipamentos {
+    background-color: white;
+    margin: 5vh;
+    display: flex;
+}
+.caixa-equipamentos h2 {
+    margin-top: 20vh;
+}
+.caixa-equipamentos .h2varadepesca {
+    margin-left: -40vh;
+}
+.caixa-equipamentos .h2isca {
+    margin-left: -20vh;
+}
+.caixa-equipamentos .h2anzol {
+    margin-left: -7vh;
+}
