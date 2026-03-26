@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Tailwind Insano</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-black text-white font-sans">
+
+  <!-- header mais clean e com glass -->
+  <header class="flex justify-between items-center p-6 backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0">
+    <h1 class="text-2xl font-bold tracking-wide">Tailwind PRO</h1>
+
+    <!-- botão com hover mais vivo -->
+    <button class="bg-blue-500 px-4 py-2 rounded-2xl hover:bg-blue-600 hover:scale-105 transition">
+      Entrar
+    </button>
+  </header>
+
+  <!-- hero com mais impacto visual -->
+  <section class="p-12 text-center">
+    <h2 class="text-5xl font-bold mb-4 leading-tight">
+      Aprenda Tailwind<br>
+      <span class="text-blue-400">de um jeito diferente</span>
+    </h2>
+
+    <p class="text-zinc-400 max-w-xl mx-auto">
+      esquece aqueles curso meia boca... aqui é prática real msm
+    </p>
+
+    <!-- botão com efeito mais chamativo -->
+    <button class="mt-8 bg-green-500 px-8 py-3 rounded-3xl font-semibold
+                   hover:scale-110 hover:bg-green-600 transition shadow-lg">
+      Começar agora
+    </button>
+  </section>
+
+  <!-- aulas estilo netflix (esse aqui ficou chave demais) -->
+  <section class="p-10">
+    <h3 class="text-3xl font-semibold mb-6">Aulas</h3>
+
+    <!-- container scroll horizontal -->
+    <div class="flex gap-6 overflow-x-auto pb-4">
+
+      <!-- mano isso aqui é tipo card interativo, da pra brincar mto -->
+      <div class="min-w-[250px] bg-white/5 backdrop-blur-lg p-5 rounded-2xl
+                  hover:scale-105 hover:bg-white/10 transition cursor-pointer"
+           onclick="toggle('mod1')">
+        <h4 class="text-xl font-bold mb-2">HTML</h4>
+        <p class="text-zinc-400 text-sm">base de tudo</p>
+      </div>
+
+      <div class="min-w-[250px] bg-white/5 backdrop-blur-lg p-5 rounded-2xl
+                  hover:scale-105 hover:bg-white/10 transition cursor-pointer"
+           onclick="toggle('mod2')">
+        <h4 class="text-xl font-bold mb-2">CSS</h4>
+        <p class="text-zinc-400 text-sm">estilização raiz</p>
+      </div>
+
+      <div class="min-w-[250px] bg-white/5 backdrop-blur-lg p-5 rounded-2xl
+                  hover:scale-105 hover:bg-white/10 transition cursor-pointer"
+           onclick="toggle('mod3')">
+        <h4 class="text-xl font-bold mb-2">Tailwind</h4>
+        <p class="text-zinc-400 text-sm">aqui vc vira brabo</p>
+      </div>
+
+    </div>
+
+    <!-- isso aqui abre tipo detalhamento, bem mais organizado -->
+    <div id="mod1" class="hidden mt-6 bg-zinc-800 p-4 rounded-xl">
+      <p>Aula 1 - Estrutura básica</p>
+      <p>Aula 2 - Tags principais</p>
+    </div>
+
+    <div id="mod2" class="hidden mt-6 bg-zinc-800 p-4 rounded-xl">
+      <p>Aula 1 - Seletores</p>
+      <p>Aula 2 - Box model</p>
+    </div>
+
+    <div id="mod3" class="hidden mt-6 bg-zinc-800 p-4 rounded-xl">
+      <p>Aula 1 - Classes utilitárias</p>
+      <p>Aula 2 - Responsividade</p>
+    </div>
+
+  </section>
+
+  <!-- footer mais clean -->
+  <footer class="p-6 text-center text-zinc-500 border-t border-white/10">
+    feito na raça msm 😎
+  </footer>
+
+  <script>
+    // função simples mas funciona suave
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
