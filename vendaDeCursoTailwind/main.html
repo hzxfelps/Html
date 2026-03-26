@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Tailwind Insano Do Charlinho</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white font-sans">
+
+  <!-- o glass nao funciona -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-4 backdrop-blur-xl bg-black/40 border-b border-white/10">
+    <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+      <h1 class="text-xl font-semibold tracking-wide">Charlinho Cursos</h1>
+
+      <nav class="space-x-6 text-sm text-zinc-400">
+        <button onclick="toggleAulas()" class="hover:text-white transition-colors">aulas</button>
+        <a href="#veraulas" class="hover:text-white transition-colors">curso</a>
+        <a href="#"
+          class="bg-indigo-600 hover:bg-indigo-700 px-5 py-2 rounded-full text-white text-sm font-medium transition-all hover:scale-105 shadow-md">
+          cadastro
+        </a>
+      </nav>
+    </div>
+  </header>
+  <section
+    class="relative max-w-6xl mx-auto px-8 pt-32 pb-20 text-center min-h-screen flex items-center overflow-visible">
+    <!--
+    <img src="Tailwind_CSS_Logo.png"
+      class="w-[500px] max-w-[80vw] opacity-10 blur-3xl 
+             pointer-events-none select-none" /> -->
+    <div class="w-full flex justify-center mb-12">
+
+      <div class="w-[350px] h-[350px] hover:scale-105 transition flex flex-col justify-center items-center gap-6
+              rounded-3xl 
+              bg-gradient-to-br from-indigo-500/20 via-cyan-400/20 to-purple-500/20
+              border border-white/10 backdrop-blur-md shadow-xl">
+
+        <div class="relative w-full flex justify-center items-center">
+
+          <!--DOASKDOAKDSODKSAOSKDAODSAD ICONS-->
+          <img id="techIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="relative z-10 w-16 transition duration-500 
+               drop-shadow-[0_0_30px_rgba(34,211,238,0.8)]" />
+
+        </div>
+
+        <!-- Dennis Rodman -->
+        <div class="flex flex-wrap justify-center gap-2">
+
+          <button onclick="trocarTech(0)" class="px-3 py-1 text-sm bg-white/10 rounded-lg hover:bg-white/20 transition">
+            HTML
+          </button>
+
+          <button onclick="trocarTech(1)" class="px-3 py-1 text-sm bg-white/10 rounded-lg hover:bg-white/20 transition">
+            CSS
+          </button>
+
+          <button onclick="trocarTech(2)" class="px-3 py-1 text-sm bg-white/10 rounded-lg hover:bg-white/20 transition">
+            JS
+          </button>
+
+          <button onclick="trocarTech(3)" class="px-3 py-1 text-sm bg-white/10 rounded-lg hover:bg-white/20 transition">
+            Tailwind
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- -->
+    <div class="relative z-10 w-full">
+      <h2 class="text-5xl font-bold mb-6 leading-tight">
+        Pare de sofrer com CSS<br>
+        <span class="text-indigo-500">Aprenda de vez o tailwind</span>
+      </h2>
+
+      <p class="text-zinc-400 max-w-xl mx-auto mb-8">
+        R$49.860,59
+      </p>
+
+      <button onclick="abrir(); alert('Comprou se fudeu')"
+        class="bg-indigo-600 px-8 py-3 rounded-xl hover:scale-105 hover:bg-indigo-700 transition shadow-lg">
+        Comprar e começar
+      </button>
+    </div>
+
+  </section>
+
+  <section>
+
+    <!--AOWKODKWOKDWOAKDWAOKDAODKWOD AOUTRA SECTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+
+    <section class="px-8 py-24 border-t border-white/10">
+
+      <div class="max-w-5xl mx-auto">
+
+        <div class="mb-16">
+          <h3 class="text-4xl font-bold">
+            Dúvidas frequentes<span class="text-indigo-400">.</span>
+          </h3>
+          <p class="text-zinc-500 mt-2">
+            Ou melhor… o básico que você precisa pra ser gente normal
+          </p>
+        </div>
+
+        <div class="space-y-6">
+
+          <details
+            class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer transition hover:bg-white/10">
+            <summary class="flex justify-between items-center font-semibold text-lg">
+              Como funcionam os efeitos?
+              <span class="group-open:rotate-180 transition">⌄</span>
+            </summary>
+
+            <div class="mt-6 bg-black/40 p-4 rounded-xl text-sm text-zinc-300 space-y-2">
+              <p><span class="text-indigo-400">hover:bg-blue-600</span> → muda a cor ao passar o mouse</p>
+              <p><span class="text-indigo-400">hover:scale-105</span> → aumenta levemente</p>
+              <p><span class="text-indigo-400">transition</span> → anima suavemente</p>
+              <p><span class="text-indigo-400">shadow-lg</span> → adiciona sombra</p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer transition hover:bg-white/10">
+            <summary class="flex justify-between items-center font-semibold text-lg">
+              Como funcionam bordas?
+              <span class="group-open:rotate-180 transition">⌄</span>
+            </summary>
+
+            <div class="mt-6 bg-black/40 p-4 rounded-xl text-sm text-zinc-300 space-y-2">
+              <p><span class="text-indigo-400">rounded</span> → leve arredondamento</p>
+              <p><span class="text-indigo-400">rounded-xl</span> → mais suave</p>
+              <p><span class="text-indigo-400">rounded-2xl</span> → bem arredondado</p>
+              <p><span class="text-indigo-400">border</span> → adiciona borda</p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer transition hover:bg-white/10">
+            <summary class="flex justify-between items-center font-semibold text-lg">
+              Como mexer com texto?
+              <span class="group-open:rotate-180 transition">⌄</span>
+            </summary>
+
+            <div class="mt-6 bg-black/40 p-4 rounded-xl text-sm text-zinc-300 space-y-2">
+              <p><span class="text-indigo-400">text-sm</span> → pequeno</p>
+              <p><span class="text-indigo-400">text-xl</span> → maior</p>
+              <p><span class="text-indigo-400">text-3xl</span> → destaque</p>
+              <p><span class="text-indigo-400">font-bold</span> → negrito</p>
+              <p><span class="text-indigo-400">text-center</span> → centraliza</p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer transition hover:bg-white/10">
+            <summary class="flex justify-between items-center font-semibold text-lg">
+              Layout
+              <span class="group-open:rotate-180 transition">⌄</span>
+            </summary>
+
+            <div class="mt-6 bg-black/40 p-4 rounded-xl text-sm text-zinc-300 space-y-2">
+              <p><span class="text-indigo-400">flex</span> → organização em linha/coluna</p>
+              <p><span class="text-indigo-400">grid</span> → layout mais estruturado</p>
+              <p><span class="text-indigo-400">justify-between</span> → espaça elementos</p>
+              <p><span class="text-indigo-400">items-center</span> → alinha no centro</p>
+              <p><span class="text-indigo-400">gap-4</span> → espaçamento interno</p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer transition hover:bg-white/10">
+            <summary class="flex justify-between items-center font-semibold text-lg">
+              Espaçamento e cores?
+              <span class="group-open:rotate-180 transition">⌄</span>
+            </summary>
+
+            <div class="mt-6 bg-black/40 p-4 rounded-xl text-sm text-zinc-300 space-y-2">
+              <p><span class="text-indigo-400">p-4 / px-6 / py-2</span> → padding</p>
+              <p><span class="text-indigo-400">m-4 / mt-6</span> → margin</p>
+              <p><span class="text-indigo-400">bg-blue-500</span> → fundo</p>
+              <p><span class="text-indigo-400">text-white</span> → texto</p>
+              <p><span class="text-indigo-400">border-zinc-700</span> → cor da borda</p>
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!--ABUDHABI -->
+    <div id="abudhabi" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden 
+            flex items-center justify-center z-50">
+
+      <div onclick="event.stopPropagation()" class="bg-gradient-to-br from-purple-600 to-indigo-600 
+              rounded-2xl p-8 w-full max-w-md relative shadow-2xl">
+
+        <button onclick="fechar()"
+          class="absolute top-4 right-4 text-xl font-bold text-white hover:scale-110 transition">
+          ✕
+        </button>
+
+        <h2 class="text-2xl font-bold text-center mb-2 text-white">
+          Inicie sua matrícula
+        </h2>
+
+        <p class="text-center text-cyan-300 mb-6 text-sm">
+          Esse é o passo que falta para o seu primeiro emprego
+        </p>
+
+        <input type="text" placeholder="Nome completo"
+          class="w-full mb-3 p-3 rounded-lg bg-white/90 text-black outline-none">
+
+        <input type="email" placeholder="E-mail" class="w-full mb-3 p-3 rounded-lg bg-white/90 text-black outline-none">
+
+        <input type="text" placeholder="Telefone"
+          class="w-full mb-4 p-3 rounded-lg bg-white/90 text-black outline-none">
+        <button class="w-full bg-cyan-400 text-black py-3 rounded-lg font-semibold 
+                   hover:scale-105 hover:bg-cyan-300 transition">
+          Continuar
+        </button>
+
+      </div>
+    </div>
+
+
+    <!-- Explicando essa porra de tailwind -->
+    <section class="px-8 py-24 border-t border-white/10 relative">
+
+      <div class="max-w-6xl mx-auto">
+
+        <!--aokaokdwokwokdoakdow-->
+        <div class="mb-16">
+          <h3 class="text-5xl font-black leading-tight">
+            Por que <span class="text-indigo-400">Tailwind</span> é absurdo?
+          </h3>
+          <p class="text-zinc-500 mt-4 max-w-lg">
+            Comece a programar que nem gente... (mais ou menos)
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-8">
+
+          <!--a linha nao funciona?-->
+          <div class="hidden md:flex justify-center">
+            <div class="w-px h-full bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+          </div>
+
+          <div class="md:col-span-2 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 
+                  p-8 rounded-3xl border border-white/10 backdrop-blur-sm
+                  hover:scale-[1.02] transition duration-300">
+
+            <h4 class="text-2xl font-bold mb-4">Velocidade absurda</h4>
+            <p class="text-zinc-400 leading-relaxed">
+              Design e layout rápidos sem ficar se matando - Tudo na mesma página e código resumido
+            </p>
+
+            <div class="mt-6 text-indigo-400 text-sm">
+              → Código muito mais prático
+            </div>
+          </div>
+
+          <!-- COLUNA RIGHT -->
+          <div class="md:col-span-2 flex flex-col gap-8">
+
+            <div class="bg-white/5 p-6 rounded-2xl border border-white/10 
+                    hover:-translate-y-1 transition duration-300">
+
+              <h4 class="text-lg font-semibold mb-2">Padronização</h4>
+              <p class="text-zinc-400 text-sm">
+                Tudo segue o mesmo modelo, sem ter que ficar definindo nomes rídiculos -
+                <span class="text-red-400">.container-final-definitivo-2</span>.
+              </p>
+            </div>
+
+            <div class="bg-white/5 p-6 rounded-2xl border border-white/10 
+                    hover:-translate-y-1 transition duration-300">
+
+              <h4 class="text-lg font-semibold mb-2">Produtividade</h4>
+              <p class="text-zinc-400 text-sm">
+                Menos tempo brigando com CSS imenso e ilegível
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button id="veraulas" onclick="toggleAulas()" class="mt-16 bg-indigo-600 px-8 py-3 rounded-xl 
+                     hover:bg-indigo-700 hover:scale-105 transition shadow-lg">
+          ver aulas
+        </button>
+
+      </div>
+
+    </section>
+
+    <!--Card de merda nao abre-->
+    <section id="aulasBox" class="hidden px-8 pb-20">
+
+      <div class="max-w-5xl mx-auto bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8">
+
+        <h3 class="text-2xl font-semibold mb-6">Aulas do curso</h3>
+
+        <div class="space-y-4">
+
+          <div class="bg-zinc-800/80 p-4 rounded-xl cursor-pointer hover:bg-zinc-700/80 transition"
+            onclick="toggle('mod1')">
+            Módulo 1 - HTML ( 4h De Carga Horária)
+          </div>
+
+          <div id="mod1" class="hidden ml-4 text-zinc-400">
+            <p>Aula 1 - Estrutura básica</p>
+            <p>Aula 2 - Tags principais</p>
+          </div>
+
+          <div class="bg-zinc-800/80 p-4 rounded-xl cursor-pointer hover:bg-zinc-700/80 transition"
+            onclick="toggle('mod2')">
+            Módulo 2 - CSS (5h De Carga Horária)
+          </div>
+
+          <div id="mod2" class="hidden ml-4 text-zinc-400">
+            <p>Aula 1 - Seletores</p>
+            <p>Aula 2 - Box model</p>
+          </div>
+
+          <div class="bg-zinc-800/80 p-4 rounded-xl cursor-pointer hover:bg-zinc-700/80 transition"
+            onclick="toggle('mod3')">
+            Módulo 3 - Tailwind (4h30 De Carga Horária)
+          </div>
+
+          <div id="mod3" class="hidden ml-4 text-zinc-400">
+            <p>Aula 1 - Classes utilitárias</p>
+            <p>Aula 2 - Responsividade</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ave maria grazia plena dominus tecum. Bendictas tu in mulieribus i bendictus fructus in ventres tui, iesus -->
+    <section class="px-8 py-20 text-center text-zinc-500">
+      <p>Maria matheus</p>
+    </section>
+
+    <!-- GENGAR -->
+    <pre class="fixed bottom-4 right-4 text-pink-500 text-[10px] leading-none 
+           opacity-70 hover:opacity-100 transition duration-300 
+           pointer-events-none select-none z-50">
+⠀⠀⠀⠀⠀⢸⠓⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⠀⠀⠑⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠙⢤⡷⣤⣦⣀⠤⠖⠚⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣠⡿⠢⢄⡀⠀⡇⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠸⠷⣶⠂⠀⠀⠀⣀⣀⠀⠀⠀
+⢸⣃⠀⠀⠉⠳⣷⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⢉⡭⠋
+⠀⠘⣆⠀⠀⠀⠁⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀
+⠀⠀⠘⣦⠆⠀⠀⢀⡎⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡏⠀⠀⣆⠘⣄⠸⢧⠀⠀⠀⠀⢀⣠⠖⢻⠀⠀⠀⣿⢥⣄⣀⣀⣀⠀⠀
+⠀⠀⢸⠁⠀⠀⡏⢣⣌⠙⠚⠀⠀⠠⣖⡛⠀⣠⠏⠀⠀⠀⠇⠀⠀⠀⠀⢙⣣⠄
+⠀⠀⢸⡀⠀⠀⠳⡞⠈⢻⠶⠤⣄⣀⣈⣉⣉⣡⡔⠀⠀⢀⠀⠀⣀⡤⠖⠚⠀⠀
+⠀⠀⡼⣇⠀⠀⠀⠙⠦⣞⡀⠀⢀⡏⠀⢸⣣⠞⠀⠀⠀⡼⠚⠋⠁⠀⠀⠀⠀⠀
+⠀⢰⡇⠙⠀⠀⠀⠀⠀⠀⠉⠙⠚⠒⠚⠉⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢧⡀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠙⣶⣶⣿⠢⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠀⠀⠀⠙⢿⣳⠞⠳⡄⠀⠀⠀⢀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠹⣄⣀⡤⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</pre>
+    <script src="app.js"></script>
+</body>
+
+</html>
