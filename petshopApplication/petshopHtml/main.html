@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PetControl PRO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-950 text-white flex">
+
+<!-- SIDEBAR -->
+<aside class="w-64 min-h-screen bg-zinc-900 border-r border-white/10 p-6">
+  <h1 class="text-2xl font-bold mb-8 text-emerald-400">PetControl</h1>
+
+  <button onclick="abrirModalCategoria()"
+    class="w-full mb-6 bg-emerald-500 py-2 rounded-xl hover:scale-105 transition">
+    + Nova Categoria
+  </button>
+
+  <div id="listaCategorias" class="space-y-2"></div>
+</aside>
+
+<!-- MAIN -->
+<main class="flex-1 p-10">
+
+  <!-- HEADER -->
+  <div class="flex justify-between items-center mb-8">
+    <h2 id="tituloCategoria" class="text-3xl font-bold">Selecione uma categoria</h2>
+
+    <button onclick="abrirProdutos()"
+      class="bg-indigo-500 px-5 py-2 rounded-xl hover:scale-105 transition">
+      + Produto
+    </button>
+  </div>
+
+  <!-- PRODUTOS -->
+  <div id="listaProdutos" class="grid md:grid-cols-3 gap-6"></div>
+
+</main>
+
+<!-- MODAL CATEGORIA -->
+<div id="modalCategoria" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center">
+
+  <div class="bg-zinc-900 p-8 rounded-2xl w-full max-w-md">
+    <h3 class="text-xl font-bold mb-4">Categoria</h3>
+
+    <input id="nomeCategoria" placeholder="Nome"
+      class="w-full p-3 mb-4 rounded bg-zinc-800">
+
+    <div class="flex justify-end gap-4">
+      <button onclick="fecharModalCategoria()">Cancelar</button>
+      <button onclick="salvarCategoria()" class="bg-emerald-500 px-4 py-2 rounded">
+        Salvar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PRODUTO -->
+<div id="modalProduto" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center">
+
+  <div class="bg-zinc-900 p-8 rounded-2xl w-full max-w-md space-y-3">
+
+    <h3 class="text-xl font-bold">Produto</h3>
+
+    <input id="nomeProduto" placeholder="Nome"
+      class="w-full p-3 rounded bg-zinc-800">
+
+    <input id="precoProduto" placeholder="Preço"
+      class="w-full p-3 rounded bg-zinc-800">
+
+    <input id="estoqueProduto" placeholder="Estoque"
+      class="w-full p-3 rounded bg-zinc-800">
+
+    <div class="flex justify-end gap-4">
+      <button onclick="fecharModalProduto()">Cancelar</button>
+      <button onclick="salvarProduto()" class="bg-indigo-500 px-4 py-2 rounded">
+        Salvar
+      </button>
+    </div>
+  </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
