@@ -1,6 +1,11 @@
 package com.felipeaugusto.petshopApplication.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "categoria")
@@ -11,14 +16,14 @@ public class Categoria {
     @Column(name = "id_categoria")
     private Long id;
 
-    @Column(nullable = false) // ← obrigatório no banco
+    @Column(nullable = false)
     private String nome;
 
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT TRUE")
-    private Boolean ativo = true; // ← padrão verdadeiro
+    private Boolean ativo = true;
 
     public Categoria() {
     }
@@ -30,7 +35,7 @@ public class Categoria {
         this.ativo = ativo;
     }
 
-    public Long getId() { // ⚠️ cuidado: o método do seu controller chama getId_categoria()
+    public Long getId() {
         return id;
     }
 
@@ -38,9 +43,6 @@ public class Categoria {
         this.id = id;
     }
 
-    // Para compatibilidade com seu controller/service (que usa getId_categoria)
-    // Você pode deixar os dois métodos, ou renomear no controller.
-    // Vou manter os dois para não quebrar seu código existente:
     public Long getId_categoria() {
         return id;
     }
@@ -65,7 +67,7 @@ public class Categoria {
         this.descricao = descricao;
     }
 
-    public boolean isAtivo() { // getter para boolean
+    public boolean isAtivo() {
         return ativo;
     }
 

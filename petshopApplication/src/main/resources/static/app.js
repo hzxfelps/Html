@@ -54,19 +54,16 @@ const elements = {
 };
 
 function saveLocalStore() {
-  const payload = {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
     categories: state.categories,
     products: state.products
-  };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+  }));
 }
 
 function loadLocalStore() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      return { categories: [], products: [] };
-    }
+    if (!raw) return { categories: [], products: [] };
     const parsed = JSON.parse(raw);
     return {
       categories: Array.isArray(parsed.categories) ? parsed.categories : [],
@@ -86,15 +83,8 @@ async function fetchJson(url, options = {}) {
       ...(options.headers || {})
     }
   });
-
-  if (!response.ok) {
-    throw new Error(`Falha ${response.status}`);
-  }
-
-  if (response.status === 204) {
-    return null;
-  }
-
+  if (!response.ok) throw new Error(`Falha ${response.status}`);
+  if (response.status === 204) return null;
   return response.json();
 }
 
@@ -107,10 +97,7 @@ function normalizeCategory(category) {
 }
 
 function escapeSvgText(value) {
-  return String(value ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  return String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 function buildPlaceholderImage(title, category) {
@@ -132,7 +119,6 @@ function normalizeProduct(product) {
   const category = product.categoria ? normalizeCategory(product.categoria) : state.categories.find((item) => item.id === Number(product.categoriaId)) || null;
   const preco = Number(product.preco ?? 0);
   const precoDesconto = Number(product.precoDesconto ?? preco);
-
   return {
     id: Number(product.id),
     nome: product.nome ?? "Produto",
@@ -147,21 +133,14 @@ function normalizeProduct(product) {
 }
 
 function formatCurrency(value) {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  }).format(Number(value || 0));
+  return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(value || 0));
 }
 
 function getFilteredProducts() {
   const search = state.search.trim().toLowerCase();
   return state.products.filter((product) => {
     const matchesCategory = state.selectedCategory === "all" || product.categoria?.id === state.selectedCategory;
-    const matchesSearch =
-      !search ||
-      product.nome.toLowerCase().includes(search) ||
-      product.descricao.toLowerCase().includes(search) ||
-      (product.categoria?.nome ?? "").toLowerCase().includes(search);
+    const matchesSearch = !search || product.nome.toLowerCase().includes(search) || product.descricao.toLowerCase().includes(search) || (product.categoria?.nome ?? "").toLowerCase().includes(search);
     return matchesCategory && matchesSearch;
   });
 }
@@ -169,13 +148,11 @@ function getFilteredProducts() {
 function renderHero() {
   elements.heroCategoryCount.textContent = String(state.categories.length);
   elements.heroProductCount.textContent = String(state.products.length);
-
   if (!state.products.length) {
     elements.heroFeaturedName.textContent = "Nenhum produto cadastrado";
     elements.heroFeaturedDescription.textContent = "Use a area admin para criar sua primeira categoria e seu primeiro produto.";
     return;
   }
-
   const featured = [...state.products].sort((a, b) => (b.preco - b.precoDesconto) - (a.preco - a.precoDesconto))[0];
   elements.heroFeaturedName.textContent = featured.nome;
   elements.heroFeaturedDescription.textContent = featured.descricao;
@@ -184,7 +161,6 @@ function renderHero() {
 function renderCategoryFilters() {
   const categoryItems = [{ id: "all", nome: "Todos" }, ...state.categories];
   elements.categoryFilters.innerHTML = "";
-
   categoryItems.forEach((category) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -202,17 +178,13 @@ function renderCategoryFilters() {
 function renderProducts() {
   const filteredProducts = getFilteredProducts();
   elements.productGrid.innerHTML = "";
-
   if (!filteredProducts.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = state.products.length
-      ? "Nenhum produto combina com esse filtro."
-      : "Sua loja esta vazia por enquanto. Abra a aba Admin e crie a primeira categoria ou produto.";
+    empty.textContent = state.products.length ? "Nenhum produto combina com esse filtro." : "Sua loja esta vazia por enquanto. Abra a aba Admin e crie a primeira categoria ou produto.";
     elements.productGrid.appendChild(empty);
     return;
   }
-
   filteredProducts.forEach((product) => {
     const card = elements.productTemplate.content.firstElementChild.cloneNode(true);
     card.querySelector("img").src = product.imagem;
@@ -230,7 +202,6 @@ function renderProducts() {
 function renderAdminLists() {
   elements.categoryTotalAdmin.textContent = `${state.categories.length} cadastradas`;
   elements.productTotalAdmin.textContent = `${state.products.length} cadastrados`;
-
   elements.adminCategoryList.innerHTML = "";
   elements.adminProductList.innerHTML = "";
 
@@ -243,13 +214,7 @@ function renderAdminLists() {
     state.categories.forEach((category) => {
       const item = document.createElement("article");
       item.className = "stack-item";
-      item.innerHTML = `
-        <div>
-          <strong>${category.nome}</strong>
-          <p>${category.descricao || "Sem descricao."}</p>
-        </div>
-        <button class="delete-button" type="button">Excluir</button>
-      `;
+      item.innerHTML = `<div><strong>${category.nome}</strong><p>${category.descricao || "Sem descricao."}</p></div><button class="delete-button" type="button">Excluir</button>`;
       item.querySelector("button").addEventListener("click", () => deleteCategory(category.id));
       elements.adminCategoryList.appendChild(item);
     });
@@ -264,13 +229,7 @@ function renderAdminLists() {
     state.products.forEach((product) => {
       const item = document.createElement("article");
       item.className = "stack-item";
-      item.innerHTML = `
-        <div>
-          <h4>${product.nome}</h4>
-          <p>${product.categoria?.nome ?? "Sem categoria"} • ${formatCurrency(product.precoDesconto)} • Estoque ${product.qtdEstoque}</p>
-        </div>
-        <button class="delete-button" type="button">Excluir</button>
-      `;
+      item.innerHTML = `<div><h4>${product.nome}</h4><p>${product.categoria?.nome ?? "Sem categoria"} • ${formatCurrency(product.precoDesconto)} • Estoque ${product.qtdEstoque}</p></div><button class="delete-button" type="button">Excluir</button>`;
       item.querySelector("button").addEventListener("click", () => deleteProduct(product.id));
       elements.adminProductList.appendChild(item);
     });
@@ -279,7 +238,6 @@ function renderAdminLists() {
 
 function renderCategorySelect() {
   elements.productCategory.innerHTML = "";
-
   if (!state.categories.length) {
     const option = document.createElement("option");
     option.value = "";
@@ -287,13 +245,17 @@ function renderCategorySelect() {
     elements.productCategory.appendChild(option);
     return;
   }
-
   state.categories.forEach((category) => {
     const option = document.createElement("option");
     option.value = String(category.id);
     option.textContent = category.nome;
     elements.productCategory.appendChild(option);
   });
+}
+
+function updateConnectionBadge() {
+  const labels = { api: "API conectada", local: "Modo local", loading: "Conectando..." };
+  elements.connectionBadge.textContent = labels[state.mode] ?? "Conectando...";
 }
 
 function renderAll() {
@@ -303,30 +265,13 @@ function renderAll() {
   renderCategorySelect();
   renderAdminLists();
   updateConnectionBadge();
-
-  if (state.currentProductId != null) {
-    renderProductDetail(state.currentProductId);
-  }
-}
-
-function updateConnectionBadge() {
-  const labels = {
-    api: "API conectada",
-    local: "Modo local",
-    loading: "Conectando..."
-  };
-  elements.connectionBadge.textContent = labels[state.mode] ?? "Conectando...";
+  if (state.currentProductId != null) renderProductDetail(state.currentProductId);
 }
 
 function setActiveView(viewName) {
-  elements.views.forEach((view) => {
-    view.classList.toggle("hidden", view.dataset.view !== viewName);
-  });
-
+  elements.views.forEach((view) => view.classList.toggle("hidden", view.dataset.view !== viewName));
   elements.navButtons.forEach((button) => {
-    if (!button.dataset.viewTarget) {
-      return;
-    }
+    if (!button.dataset.viewTarget) return;
     button.classList.toggle("active", button.dataset.viewTarget === viewName);
   });
 }
@@ -355,7 +300,6 @@ function renderProductDetail(productId) {
     openStore();
     return;
   }
-
   elements.detailImage.src = product.imagem;
   elements.detailImage.alt = product.nome;
   elements.detailCategory.textContent = product.categoria?.nome ?? "Sem categoria";
@@ -375,11 +319,7 @@ function renderProductDetail(productId) {
 
 async function loadStoreData() {
   try {
-    const [rawCategories, rawProducts] = await Promise.all([
-      fetchJson(CATEGORY_URL),
-      fetchJson(PRODUCT_URL)
-    ]);
-
+    const [rawCategories, rawProducts] = await Promise.all([fetchJson(CATEGORY_URL), fetchJson(PRODUCT_URL)]);
     state.categories = rawCategories.map(normalizeCategory);
     state.products = rawProducts.map(normalizeProduct);
     state.mode = "api";
@@ -390,41 +330,25 @@ async function loadStoreData() {
     state.products = local.products.map(normalizeProduct);
     state.mode = "local";
   }
-
   renderAll();
   syncRoute();
 }
 
 async function createCategory(category) {
   if (state.mode === "api") {
-    const created = await fetchJson(CATEGORY_URL, {
-      method: "POST",
-      body: JSON.stringify({
-        nome: category.nome,
-        descricao: category.descricao,
-        ativo: true
-      })
-    });
+    const created = await fetchJson(CATEGORY_URL, { method: "POST", body: JSON.stringify({ nome: category.nome, descricao: category.descricao, ativo: true }) });
     state.categories.push(normalizeCategory(created));
     saveLocalStore();
     return;
   }
-
   const nextId = state.categories.reduce((max, item) => Math.max(max, item.id), 0) + 1;
-  state.categories.push({
-    id: nextId,
-    nome: category.nome,
-    descricao: category.descricao
-  });
+  state.categories.push({ id: nextId, nome: category.nome, descricao: category.descricao });
   saveLocalStore();
 }
 
 async function createProduct(product) {
   const category = state.categories.find((item) => item.id === Number(product.categoryId));
-  if (!category) {
-    throw new Error("Categoria invalida");
-  }
-
+  if (!category) throw new Error("Categoria invalida");
   if (state.mode === "api") {
     const created = await fetchJson(PRODUCT_URL, {
       method: "POST",
@@ -443,29 +367,16 @@ async function createProduct(product) {
     saveLocalStore();
     return;
   }
-
   const nextId = state.products.reduce((max, item) => Math.max(max, item.id), 0) + 1;
-  state.products.push(normalizeProduct({
-    id: nextId,
-    nome: product.nome,
-    descricao: product.descricao,
-    preco: product.preco,
-    precoDesconto: product.precoDesconto,
-    qtdEstoque: product.qtdEstoque,
-    imagem: product.imagem,
-    ativo: true,
-    categoria
-  }));
+  state.products.push(normalizeProduct({ id: nextId, nome: product.nome, descricao: product.descricao, preco: product.preco, precoDesconto: product.precoDesconto, qtdEstoque: product.qtdEstoque, imagem: product.imagem, ativo: true, categoria }));
   saveLocalStore();
 }
 
 async function deleteCategory(categoryId) {
-  const hasProducts = state.products.some((product) => product.categoria?.id === categoryId);
-  if (hasProducts) {
+  if (state.products.some((product) => product.categoria?.id === categoryId)) {
     alert("Exclua os produtos dessa categoria primeiro.");
     return;
   }
-
   if (state.mode === "api") {
     try {
       await fetchJson(`${CATEGORY_URL}/${categoryId}`, { method: "DELETE" });
@@ -474,11 +385,8 @@ async function deleteCategory(categoryId) {
       return;
     }
   }
-
   state.categories = state.categories.filter((category) => category.id !== categoryId);
-  if (state.selectedCategory === categoryId) {
-    state.selectedCategory = "all";
-  }
+  if (state.selectedCategory === categoryId) state.selectedCategory = "all";
   saveLocalStore();
   renderAll();
 }
@@ -492,11 +400,8 @@ async function deleteProduct(productId) {
       return;
     }
   }
-
   state.products = state.products.filter((product) => product.id !== productId);
-  if (state.currentProductId === productId) {
-    state.currentProductId = null;
-  }
+  if (state.currentProductId === productId) state.currentProductId = null;
   saveLocalStore();
   renderAll();
   syncRoute();
@@ -508,9 +413,7 @@ function resetCategoryForm() {
 
 function resetProductForm() {
   elements.productForm.reset();
-  if (state.categories.length) {
-    elements.productCategory.value = String(state.categories[0].id);
-  }
+  if (state.categories.length) elements.productCategory.value = String(state.categories[0].id);
 }
 
 function syncRoute() {
@@ -522,12 +425,10 @@ function syncRoute() {
       return;
     }
   }
-
   if (hash === "#/admin") {
     openAdmin();
     return;
   }
-
   setActiveView("store");
 }
 
@@ -540,12 +441,10 @@ elements.categoryForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const nome = elements.categoryName.value.trim();
   const descricao = elements.categoryDescription.value.trim();
-
   if (!nome) {
     alert("Preencha o nome da categoria.");
     return;
   }
-
   try {
     await createCategory({ nome, descricao });
     resetCategoryForm();
@@ -557,12 +456,10 @@ elements.categoryForm.addEventListener("submit", async (event) => {
 
 elements.productForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-
   if (!state.categories.length) {
     alert("Crie uma categoria antes de adicionar produtos.");
     return;
   }
-
   const nome = elements.productName.value.trim();
   const descricao = elements.productDescription.value.trim();
   const categoryId = Number(elements.productCategory.value);
@@ -570,22 +467,12 @@ elements.productForm.addEventListener("submit", async (event) => {
   const precoDesconto = Number(elements.productSalePrice.value || elements.productPrice.value);
   const qtdEstoque = Number(elements.productStock.value);
   const imagem = elements.productImage.value.trim();
-
   if (!nome || !descricao || !Number.isFinite(preco) || !Number.isFinite(precoDesconto) || !Number.isFinite(qtdEstoque)) {
     alert("Preencha os campos do produto corretamente.");
     return;
   }
-
   try {
-    await createProduct({
-      nome,
-      descricao,
-      categoryId,
-      preco,
-      precoDesconto,
-      qtdEstoque,
-      imagem
-    });
+    await createProduct({ nome, descricao, categoryId, preco, precoDesconto, qtdEstoque, imagem });
     resetProductForm();
     renderAll();
   } catch (error) {
@@ -595,18 +482,13 @@ elements.productForm.addEventListener("submit", async (event) => {
 
 elements.backToStore.addEventListener("click", () => openStore());
 window.addEventListener("hashchange", syncRoute);
-
 elements.navButtons.forEach((button) => {
-  if (!button.dataset.viewTarget) {
-    return;
-  }
-
+  if (!button.dataset.viewTarget) return;
   button.addEventListener("click", () => {
     if (button.dataset.viewTarget === "admin") {
       openAdmin();
       return;
     }
-
     openStore();
   });
 });
